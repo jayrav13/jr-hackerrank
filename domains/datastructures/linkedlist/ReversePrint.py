@@ -12,8 +12,7 @@ def ReversePrint(head):
 	if head == None:
 		return None
 
-	if head.next == None:
-		pass
-	else:
+	if head.next != None:
 		 ReversePrint(head.next)
+
 	print head.data
