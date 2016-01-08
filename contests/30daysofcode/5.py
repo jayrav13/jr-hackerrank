@@ -13,4 +13,4 @@ def NthTerm(b, N):
 for elem in arr:
     for x in range(1, elem[2] + 1):
         print elem[0] + NthTerm(elem[1], x),
-    print ""
+    print "\n",
