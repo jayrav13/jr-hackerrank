@@ -2,16 +2,17 @@
 
 import sys
 
-time = raw_input().strip()
+time = raw_input().strip().split(':')
 
-timearr = time.split(':')
+if time[2][-2:] == 'PM' and int(time[0]) < 12:
+	time[0] = str(int(time[0]) + 12)
+if time[2][-2:] == 'AM':
+	if time[0] == '12':
+		time[0] = '00'
 
-timearr[2] = [timearr[2][0:2], timearr[2][2:4]]
+if int(time[0]) == 24:
+	time[0] = "00"
 
-if timearr[2][1] == 'PM':
-	timearr[0] = int(timearr[0]) + 12
+time[2] = time[2][:-2]
 
-if timearr[2][0] == 'AM' and timearr[0] == "12":
-	timearr[0] = "00"
-
-print str(timearr[0]) + ":" + str(timearr[1]) + ":" + str(timearr[2][0])
+print ":".join(time)

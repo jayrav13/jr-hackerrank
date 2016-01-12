@@ -5,5 +5,4 @@ arr = []
 for i in range(0, n):
 	arr.append(int(raw_input().strip()))
 
-for elem in arr:
-	
+
