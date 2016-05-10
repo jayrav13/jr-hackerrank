@@ -5,22 +5,27 @@ arr = []
 for i in range(0, n):
 	arr.append(raw_input().strip())
 
-largest = -1
+tester = arr[0]
+arr.pop(0)
 
-for index, elem in enumerate(arr):
-	if len(elem) > largest:
-		largest = index
+total_count = 0
 
-count = 0
-largest = arr[largest]
-minimum = []
+unique = []
+for letter in tester:
+	if letter not in unique:
+		unique.append(letter)
 
-for elem in arr:
-	track = 0
-	for letter in largest:
-		if letter in elem:
-			track = track + 1
+for letter in unique:
+	letter_count = 0
+	for string in arr:
+		if letter in string:
+			letter_count = letter_count + 1
 
-	minimum.append(track)
+	if letter_count == len(arr):
+		total_count = total_count + 1
 
-print min(minimum)
+print total_count
+		
+
+		
+
